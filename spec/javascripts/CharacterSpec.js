@@ -1,12 +1,12 @@
 describe("Character", function() {
-  var character; 
+  var character;
   var characterSpriteImage = "character_sprites/roshan.png";
-  
+
   beforeEach(function(){
     character = new Character(characterSpriteImage);
   });
 
-  it('should create Character', function(){
+  it('constructor', function(){
     expect(character).toBeDefined();
     expect(character.animation).toBeDefined();
     expect(character._spriteImage).toBe(characterSpriteImage);
@@ -18,8 +18,8 @@ describe("Character", function() {
     expect(character._spriteSheet._animations[3]).toBe("walkUp")
   });
 
-  it('shoulr return correct Character properties', function(){  
-    var properties = character._getSpriteSheetProperties(); 
+  it('_getSpriteSheetProperties', function(){
+    var properties = character._getSpriteSheetProperties();
 
     expect(properties.images).toEqual([characterSpriteImage]);
     expect(properties.frames.width).toEqual(32);

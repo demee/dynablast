@@ -11,8 +11,9 @@
 #   - dist/**/*.js
 #
 src_files:
-    - dyna/lib/underscore-min.js
+    - dyna/lib/underscore.js
     - dyna/lib/createjs-min.js
+    - dyna/lib/asevented.js
     - dyna/javascripts/**/*.js
 
 # stylesheets
