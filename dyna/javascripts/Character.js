@@ -1,8 +1,13 @@
-define('Character', function(){
+define('Character', [], function(){
+  'use strict';
   /*
    * Only rendering and diplay
    */
-
+  /**
+   *
+   * @param spriteImage
+   * @constructor
+   */
   var Character = function(spriteImage){
     /* configuration */
     this._sprite_animation_frequency = 10;
@@ -15,6 +20,11 @@ define('Character', function(){
     this.animation    = new createjs.BitmapAnimation(this._spriteSheet);
   };
 
+  /**
+   *
+   * @returns {{images: Array, frames: {width: number, height: number}, animations: {walkDown: {frames: Array, frequency: number}, walkLeft: {frames: Array, frequency: number}, walkRight: {frames: Array, frequency: number}, walkUp: {frames: Array, frequency: number}}}}
+   * @private
+   */
   Character.prototype._getSpriteSheetProperties = function(){
     return {
       images: [this._spriteImage],
@@ -41,5 +51,7 @@ define('Character', function(){
         }
       }
     };
-  }
-})
+  };
+
+  return Character;
+});

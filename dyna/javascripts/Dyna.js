@@ -1,17 +1,27 @@
-var Dyna = function(stageId){
+define('Dyna', [], function(){
+  'use strict';
+  /**
+   *
+   * @param stageId
+   * @constructor
+   */
+  var Dyna = function(stageId){
     this.stage = new createjs.Stage(stageId);
-}
+  };
 
-Dyna.prototype.initTicker = function(){
+  Dyna.prototype.initTicker = function(){
     createjs.Ticker.addListener(this);
     createjs.Ticker.useRAF = true;
     createjs.Ticker.setFPS(60);
-}
+  };
 
-Dyna.prototype.tick = function(){
+  Dyna.prototype.tick = function(){
     this.stage.update();
-}
+  };
 
-Dyna.prototype.run = function(){
+  Dyna.prototype.run = function(){
     this.initTicker();
-}
+  };
+
+  return Dyna;
+});

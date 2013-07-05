@@ -14,6 +14,7 @@ src_files:
     - dyna/lib/underscore.js
     - dyna/lib/createjs-min.js
     - dyna/lib/asevented.js
+    - dyna/lib/almond.js
     - dyna/javascripts/**/*.js
 
 # stylesheets
