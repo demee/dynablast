@@ -1,4 +1,4 @@
-define('Dyna', [], function(){
+define('Dyna', ['LoadingScreen'], function(){
   'use strict';
   /**
    *
@@ -12,7 +12,7 @@ define('Dyna', [], function(){
   Dyna.prototype.initTicker = function(){
     createjs.Ticker.addListener(this);
     createjs.Ticker.useRAF = true;
-    createjs.Ticker.setFPS(60);
+    createjs.Ticker.setFPS(30);
   };
 
   Dyna.prototype.tick = function(){
@@ -21,6 +21,16 @@ define('Dyna', [], function(){
 
   Dyna.prototype.run = function(){
     this.initTicker();
+    this.showLoadingScreen();
+    this.resourcesLoader.on('finish', this.showMenuScreen());
+  };
+
+  Dyna.prototype.showLoadingScreen = function() {
+
+  };
+
+  Dyna.prototype.showMenuScreen = function(){
+
   };
 
   return Dyna;
